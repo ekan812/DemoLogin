@@ -18,7 +18,7 @@ public class AccountController {
 	AccountServiceInt accountService;
 
 	@RequestMapping("/accounts")
-	public ResponseEntity<List<Account>> findAccounts(@RequestParam("id") int id){
+	public ResponseEntity<List<Account>> findAccounts(@RequestParam(name="id",defaultValue="1") int id){
 		return accountService.getAccounts(id);
 	}
 }
